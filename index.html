@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mannu Finance — Home Loan, LAP, Commercial & Industrial Property Loans in Surat</title>
+<meta name="description" content="Property loans in Surat: Home Loan (PMAY subsidy help), Loan Against Property for business, Commercial shop/office purchase and Industrial GIDC shed/godown finance. Answer 4 questions on WhatsApp, get a call in 5 minutes.">
+<style>
+  :root{
+    --red:#e02b2b; --red-dark:#b81f22; --dark:#2e2b2b; --dark-soft:#4a4545;
+    --bg:#f7f5f3; --card:#ffffff; --ink:#2e2b2b; --muted:#7d7672; --line:#e9e2dd;
+    --wa:#25d366;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans","Noto Sans Gujarati","Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  .wrap{max-width:660px;margin:0 auto;padding:0 16px}
+
+  .topbar{background:#fff;border-bottom:1px solid var(--line);padding:12px 0}
+  .top-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+  .logo svg{width:44px;height:44px;flex:none}
+  .logo img{height:44px;width:auto;display:block}
+  .wordmark{line-height:1.15}
+  .wordmark .wm{font-size:1.22rem;font-weight:900;letter-spacing:.4px}
+  .wordmark .wm .m1{color:var(--red)}
+  .wordmark .wm .m2{color:var(--dark)}
+  .wordmark .tag{font-size:.68rem;color:var(--dark-soft);font-style:italic;font-weight:600;letter-spacing:.2px}
+  .langs{display:flex;gap:6px}
+  .langs button{background:#fff;border:1.5px solid var(--line);color:var(--dark);border-radius:20px;padding:4px 12px;font-size:.85rem;cursor:pointer}
+  .langs button.active{background:var(--red);color:#fff;font-weight:700;border-color:var(--red)}
+
+  .hero{background:linear-gradient(160deg,var(--red) 0%,var(--red-dark) 100%);color:#fff;padding:26px 0 30px}
+  .hero h1{font-size:1.5rem;line-height:1.32;margin-bottom:8px}
+  .hero p.sub{font-size:1rem;opacity:.96}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.4);border-radius:20px;padding:5px 12px;font-size:.86rem;font-weight:600}
+
+  .trust{background:var(--dark);color:#fff;padding:10px 0;font-size:.9rem;text-align:center}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px;margin:22px 0;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+  .card h2{font-size:1.2rem;color:var(--red-dark);margin-bottom:4px}
+  .card p.note{font-size:.9rem;color:var(--muted);margin-bottom:16px}
+
+  .prods{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+  .prod{border:1.5px solid var(--line);border-radius:12px;padding:14px 12px;background:#fff;cursor:pointer;display:flex;flex-direction:column;gap:6px}
+  .prod:active{transform:scale(.99)}
+  .prod .ic{font-size:1.5rem}
+  .prod h3{font-size:.98rem;color:var(--dark)}
+  .prod p{font-size:.8rem;color:var(--muted);line-height:1.4;flex:1}
+  .prod .go{color:var(--red-dark);font-weight:800;font-size:.85rem}
+  @media (max-width:349px){.prods{grid-template-columns:1fr}}
+
+  fieldset{border:none;margin-bottom:18px}
+  legend{font-weight:700;font-size:1rem;margin-bottom:8px}
+  .opts label{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:8px;cursor:pointer;font-size:.95rem;background:#fff}
+  .opts label:has(input:checked){border-color:var(--red);background:#fdf1f1;font-weight:600}
+  .opts input{accent-color:var(--red);width:18px;height:18px;flex:none}
+  .opts.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .opts.grid2 label{margin-bottom:0}
+  @media (max-width:349px){.opts.grid2{grid-template-columns:1fr}}
+  input[type=text],input[type=number]{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;font-size:.95rem;margin-top:4px}
+  .err{color:#b3261e;font-size:.85rem;display:none;margin-top:6px}
+
+  .btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--wa);color:#fff;border:none;border-radius:12px;padding:15px;font-size:1.05rem;font-weight:800;cursor:pointer}
+  .btn-wa:active{transform:scale(.99)}
+  .after-btn{text-align:center;font-size:.85rem;color:var(--muted);margin-top:10px}
+
+  .steps{list-style:none;counter-reset:s}
+  .steps li{counter-increment:s;position:relative;padding:10px 0 10px 44px;font-size:.95rem;border-bottom:1px dashed var(--line)}
+  .steps li:last-child{border-bottom:none}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+
+  .calc label{display:block;font-size:.9rem;font-weight:600;margin:12px 0 4px}
+  .calc input[type=range]{width:100%;accent-color:var(--red)}
+  .calc .val{color:var(--red-dark);font-weight:800}
+  .emi-out{background:#fdf1f1;border:1.5px solid var(--red);border-radius:12px;text-align:center;padding:14px;margin-top:14px}
+  .emi-out .big{font-size:1.5rem;font-weight:900;color:var(--red-dark)}
+  .emi-out .sm{font-size:.8rem;color:var(--muted)}
+
+  .why ul{list-style:none}
+  .why li{padding:8px 0 8px 30px;position:relative;font-size:.95rem;border-bottom:1px dashed var(--line)}
+  .why li:last-child{border-bottom:none}
+  .why li::before{content:"✔";position:absolute;left:4px;color:var(--red);font-weight:800}
+
+  .areas h3{font-size:.92rem;margin:12px 0 8px;color:var(--dark)}
+  .a-chips{display:flex;flex-wrap:wrap;gap:7px}
+  .a-chip{background:#fff;border:1px solid var(--line);border-radius:18px;padding:4px 12px;font-size:.83rem}
+
+  .contact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0;font-size:.93rem}
+  .contact div{margin-bottom:6px}
+  .contact a{color:var(--red-dark);font-weight:700;text-decoration:none}
+
+  .float-wa{position:fixed;right:16px;bottom:16px;background:var(--wa);color:#fff;border-radius:50px;padding:13px 18px;font-weight:800;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);font-size:.95rem;z-index:9}
+
+  footer{background:#ece7e2;color:#5c534d;font-size:.78rem;padding:22px 0 90px;margin-top:26px}
+  footer p{margin-bottom:8px}
+  .wa-ic{width:22px;height:22px;flex:none}
+
+  @media (min-width:480px){
+    .hero h1{font-size:1.8rem}
+    .logo svg{width:50px;height:50px}
+    .logo img{height:50px}
+    .wordmark .wm{font-size:1.4rem}
+    .wordmark .tag{font-size:.75rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap top-row">
+    <a class="logo" href="#" aria-label="Mannu Finance">
+      <img src="logo.png" alt="" style="display:none"
+           onload="this.style.display='block'; document.getElementById('logoSvg').style.display='none';">
+      <svg id="logoSvg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10 96 V52 a40 40 0 0 1 80 0 V96 Z" fill="#e02b2b"/>
+        <g stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M24 60 L50 34 L76 60"/>
+          <path d="M33 55 V96"/>
+          <path d="M67 55 V96"/>
+          <path d="M33 60 L50 82 L67 60"/>
+        </g>
+        <path d="M43 96 v-7 a7 7 0 0 1 14 0 v7 Z" fill="#fff"/>
+      </svg>
+      <span class="wordmark">
+        <span class="wm"><span class="m1">MANNU</span> <span class="m2">FINANCE</span></span><br>
+        <span class="tag">Your Trusted Loan Partner</span>
+      </span>
+    </a>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="active">English</button>
+      <button type="button" data-lang="hi">हिंदी</button>
+      <button type="button" data-lang="gu">ગુજરાતી</button>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 data-i18n="h1"></h1>
+    <p class="sub" data-i18n="sub"></p>
+    <div class="chips">
+      <div class="chip">₹12 lakh – ₹5 crore</div>
+      <div class="chip" data-i18n="chipPmay"></div>
+      <div class="chip" data-i18n="chip5m"></div>
+      <div class="chip">Surat + South Gujarat</div>
+    </div>
+  </div>
+</header>
+
+<div class="trust"><div class="wrap" data-i18n="trust"></div></div>
+
+<main class="wrap">
+
+  <!-- product cards -->
+  <div class="card">
+    <h2 data-i18n="prodTitle"></h2>
+    <p class="note" data-i18n="prodNote"></p>
+    <div class="prods">
+      <div class="prod" data-prod="hl"><div class="ic">🏠</div><h3 data-i18n="hlName"></h3><p data-i18n="hlDesc"></p><span class="go" data-i18n="applyBtn"></span></div>
+      <div class="prod" data-prod="lap"><div class="ic">🏭</div><h3 data-i18n="lapName"></h3><p data-i18n="lapDesc"></p><span class="go" data-i18n="applyBtn"></span></div>
+      <div class="prod" data-prod="cp"><div class="ic">🏪</div><h3 data-i18n="cpName"></h3><p data-i18n="cpDesc"></p><span class="go" data-i18n="applyBtn"></span></div>
+      <div class="prod" data-prod="ip"><div class="ic">⚙️</div><h3 data-i18n="ipName"></h3><p data-i18n="ipDesc"></p><span class="go" data-i18n="applyBtn"></span></div>
+    </div>
+  </div>
+
+  <!-- the gate -->
+  <div class="card" id="formCard">
+    <h2 data-i18n="formTitle"></h2>
+    <p class="note" data-i18n="formNote"></p>
+    <form id="gate" novalidate>
+      <fieldset>
+        <legend data-i18n="q0"></legend>
+        <div class="opts grid2" id="q0"></div>
+      </fieldset>
+      <fieldset>
+        <legend id="q1label"></legend>
+        <div class="opts" id="q1"></div>
+      </fieldset>
+      <fieldset>
+        <legend data-i18n="q2"></legend>
+        <div class="opts" id="q2"></div>
+      </fieldset>
+      <fieldset>
+        <legend id="q3label"></legend>
+        <div class="opts" id="q3"></div>
+        <input type="text" id="area" maxlength="60">
+      </fieldset>
+      <fieldset>
+        <legend data-i18n="q4"></legend>
+        <div class="opts" id="q4"></div>
+      </fieldset>
+      <p class="err" id="err" data-i18n="err"></p>
+      <button type="submit" class="btn-wa">
+        <svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.66 15L2 22l5.2-1.36A10 10 0 1 0 12 2Zm5.46 14.15c-.23.65-1.34 1.24-1.87 1.29-.5.05-1.13.24-3.8-.79-3.2-1.26-5.24-4.53-5.4-4.74-.16-.21-1.3-1.73-1.3-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.64-.4.85-.4l.61.01c.2.01.46-.07.72.55.27.64.91 2.21.99 2.37.08.16.13.35.03.56-.11.21-.16.34-.32.53l-.48.56c-.16.16-.33.34-.14.66.19.32.83 1.37 1.78 2.22 1.22 1.09 2.25 1.43 2.57 1.59.32.16.51.13.7-.08.19-.21.8-.94 1.02-1.26.21-.32.43-.27.72-.16.29.11 1.86.88 2.18 1.04.32.16.53.24.61.37.08.14.08.79-.15 1.44Z"/></svg>
+        <span data-i18n="btn"></span>
+      </button>
+      <p class="after-btn" data-i18n="afterBtn"></p>
+    </form>
+  </div>
+
+  <!-- EMI calculator -->
+  <div class="card calc">
+    <h2 data-i18n="calcTitle"></h2>
+    <p class="note" data-i18n="calcNote"></p>
+    <label><span data-i18n="calcAmt"></span>: <span class="val" id="amtVal"></span></label>
+    <input type="range" id="cAmt" min="12" max="500" step="1" value="25">
+    <label><span data-i18n="calcRate"></span>: <span class="val" id="rateVal"></span></label>
+    <input type="range" id="cRate" min="8" max="14" step="0.25" value="9.45">
+    <label><span data-i18n="calcTen"></span>: <span class="val" id="tenVal"></span></label>
+    <input type="range" id="cTen" min="5" max="25" step="1" value="20">
+    <div class="emi-out">
+      <div class="sm" data-i18n="calcEmiLabel"></div>
+      <div class="big" id="emiOut"></div>
+      <div class="sm" data-i18n="calcDisc"></div>
+    </div>
+  </div>
+
+  <!-- process -->
+  <div class="card">
+    <h2 data-i18n="procTitle"></h2>
+    <ol class="steps">
+      <li data-i18n="p1"></li>
+      <li data-i18n="p2"></li>
+      <li data-i18n="p3"></li>
+      <li data-i18n="p4"></li>
+    </ol>
+  </div>
+
+  <!-- why -->
+  <div class="card why">
+    <h2 data-i18n="whyTitle"></h2>
+    <ul>
+      <li data-i18n="w1"></li>
+      <li data-i18n="w2"></li>
+      <li data-i18n="w3"></li>
+      <li data-i18n="w4"></li>
+      <li data-i18n="w5"></li>
+    </ul>
+  </div>
+
+  <!-- areas -->
+  <div class="card areas">
+    <h2 data-i18n="areasTitle"></h2>
+    <h3 data-i18n="areasRes"></h3>
+    <div class="a-chips">
+      <span class="a-chip">Dindoli</span><span class="a-chip">Godadara</span><span class="a-chip">Olpad</span>
+      <span class="a-chip">Kamrej</span><span class="a-chip">Adajan</span><span class="a-chip">Varachha</span>
+      <span class="a-chip">Vesu</span><span class="a-chip">Pal</span><span class="a-chip">Sarthana</span>
+    </div>
+    <h3 data-i18n="areasInd"></h3>
+    <div class="a-chips">
+      <span class="a-chip">Sachin GIDC</span><span class="a-chip">Pandesara</span><span class="a-chip">Udhna</span>
+      <span class="a-chip">Kadodara</span><span class="a-chip">Palsana</span><span class="a-chip">Hazira</span>
+      <span class="a-chip">Lajpore</span>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div><strong data-i18n="cTitle"></strong></div>
+    <div>WhatsApp: <a href="https://wa.me/919974153499">+91 99741 53499</a></div>
+    <div>Email: <a href="mailto:support@mannufinance.com">support@mannufinance.com</a></div>
+    <div data-i18n="cArea"></div>
+    <div data-i18n="cHours"></div>
+  </div>
+</main>
+
+<a class="float-wa" href="https://wa.me/919974153499">💬 WhatsApp</a>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Mannu Finance</strong> is a loan facilitation service, not a bank or NBFC. Loan sanction and disbursal are entirely subject to the lender's credit policy and verification. We never promise or imply guaranteed approval.</p>
+    <p>*Home loan programs from 9.45% p.a.; final rate for any product depends on the applicant's profile, property, loan amount and lender policy. PMAY-U 2.0 interest subsidy (up to ₹1.80 lakh) subject to government eligibility rules. EMI calculator figures are indicative only. Processing fees and all charges are disclosed clearly before any application.</p>
+    <p>© Mannu Finance · Jahangirpura, Surat - 395005 · mannufinance.com</p>
+  </div>
+</footer>
+
+<script>
+const AMOUNTS = {
+  hl:  ["₹12–20 lakh","₹20–35 lakh","₹35 lakh – 2 crore"],
+  lap: ["₹12–25 lakh","₹25–50 lakh","₹50 lakh – 3 crore"],
+  cp:  ["₹25–50 lakh","₹50 lakh – 1 crore","₹1 – 5 crore"],
+  ip:  ["₹25–50 lakh","₹50 lakh – 1 crore","₹1 – 5 crore"]
+};
+
+const I18N = {
+  en: {
+    h1: "Property loans in Surat — home, business & industrial. Straight talk.",
+    sub: "Home Loan · Loan Against Property · Commercial shop/office · Industrial GIDC shed & godown. Salaried or self-employed, bank salary or cash — the right program makes the loan possible.",
+    chipPmay: "PMAY subsidy up to ₹1.8 lakh",
+    chip5m: "Call in 5 minutes",
+    trust: "No hidden charges — rate and processing fee made clear in the very first conversation.",
+    prodTitle: "What do you need?",
+    prodNote: "Tap a product — the form below sets itself up for it.",
+    hlName: "Home Loan", hlDesc: "Buy or build your home. From 9.45%*, PMAY subsidy help, cash-salary programs too.",
+    lapName: "Loan Against Property", lapDesc: "Funds for your business against your house, shop or factory. Textile & diamond units welcome.",
+    cpName: "Commercial Property", cpDesc: "Buy a shop, office or showroom — Surat's fastest-growing property segment.",
+    ipName: "Industrial Property", ipDesc: "Shed, godown or plot in Sachin GIDC, Pandesara, Palsana, Kadodara & more.",
+    applyBtn: "Apply →",
+    formTitle: "4 questions → a call in 5 minutes",
+    formNote: "Pick your answers and send them on WhatsApp. During working hours (9:30am–8pm) you'll get a call within 5 minutes.",
+    q0: "Loan type",
+    prodShort: { hl:"Home Loan", lap:"Loan Against Property", cp:"Commercial Property", ip:"Industrial Property" },
+    q1: "1) How much loan do you need?",
+    q1noteHL: "(minimum ₹12 lakh)", q1noteBig: "(minimum ₹25 lakh)",
+    q2: "2) What do you do?",
+    q2o: ["Job — salary in bank", "Job — cash salary", "Business / self-employed"],
+    q3find: "3) Property status?",
+    q3findO: ["Property finalized", "Still searching"],
+    q3own: "3) Which property will you mortgage?",
+    q3ownO: ["House / Flat", "Shop / Office", "Factory / Godown (GIDC)"],
+    q3area: "Which area? (optional)",
+    q4: "4) Any EMI/cheque bounce in the last 12 months?",
+    q4o: ["Yes", "No", "Never taken a loan"],
+    err: "Please answer all the questions.",
+    btn: "Send on WhatsApp",
+    afterBtn: "WhatsApp opens with your message ready — just press Send.",
+    calcTitle: "EMI Calculator",
+    calcNote: "Move the sliders for an instant estimate.",
+    calcAmt: "Loan amount", calcRate: "Interest rate", calcTen: "Tenure",
+    calcEmiLabel: "Estimated monthly EMI",
+    calcDisc: "Indicative only — exact figure after profile check.",
+    calcYr: "years",
+    procTitle: "How it works",
+    p1: "Send your 4 answers on WhatsApp — 30 seconds.",
+    p2: "We call within 5 minutes (working hours) and do a 10-minute profile check — exact rate and eligibility, no bait figures.",
+    p3: "Meeting at your home, shop or site anywhere in Surat. Documents collected in one visit.",
+    p4: "File logged in with the right lender program. Regular updates till sanction and disbursal.",
+    whyTitle: "Why Mannu Finance?",
+    w1: "₹12 lakh to ₹5 crore — Home Loan, LAP, Micro-LAP, Balance Transfer, Commercial & Industrial",
+    w2: "Cash salary or informal income? There's a right program for your file",
+    w3: "PMAY-U 2.0 subsidy help — up to ₹1.80 lakh benefit for eligible first-time buyers",
+    w4: "Textile & diamond business owners: loan against your factory, shop or house for business growth",
+    w5: "Processing fee and rate clear upfront — no hidden charges, no guaranteed-approval lies",
+    areasTitle: "Areas we serve",
+    areasRes: "Residential", areasInd: "Industrial & commercial belts",
+    cTitle: "Contact",
+    cArea: "Jahangirpura, Surat - 395005 (serving all of Surat & South Gujarat)",
+    cHours: "Mon–Sat 9:30am–8pm · Sun 10am–6pm",
+    waIntro: "Hello! My loan enquiry:",
+    waLabels: ["Loan", "Amount", "Work", "Property", "EMI/cheque bounce"],
+    waArea: "Area"
+  },
+  hi: {
+    h1: "Surat mein property loan — ghar, business aur industrial. Seedhi baat.",
+    sub: "Home Loan · Loan Against Property · Commercial dukaan/office · Industrial GIDC shed & godown. Naukri ho ya dhandha, salary bank mein ya cash — sahi program mein loan possible hai.",
+    chipPmay: "PMAY subsidy ₹1.8 lakh tak",
+    chip5m: "5 minute mein call",
+    trust: "Koi hidden charge nahi — rate aur processing fee pehli baat-cheet mein hi clear.",
+    prodTitle: "Aapko kya chahiye?",
+    prodNote: "Product par tap karo — neeche ka form usi ke hisaab se set ho jayega.",
+    hlName: "Home Loan", hlDesc: "Ghar kharido ya banao. 9.45% se*, PMAY subsidy help, cash-salary program bhi.",
+    lapName: "Loan Against Property", lapDesc: "Ghar, dukaan ya factory ke against business ke liye paisa. Textile & diamond units welcome.",
+    cpName: "Commercial Property", cpDesc: "Dukaan, office ya showroom kharido — Surat ka sabse tez badhta segment.",
+    ipName: "Industrial Property", ipDesc: "Sachin GIDC, Pandesara, Palsana, Kadodara mein shed, godown ya plot.",
+    applyBtn: "Apply →",
+    formTitle: "4 sawaal → 5 minute mein call",
+    formNote: "Jawab chuniye aur WhatsApp par bhejiye. Kaam ke time (9:30am–8pm) mein 5 minute ke andar call aayega.",
+    q0: "Loan type",
+    prodShort: { hl:"Home Loan", lap:"Loan Against Property", cp:"Commercial Property", ip:"Industrial Property" },
+    q1: "1) Loan kitna chahiye?",
+    q1noteHL: "(minimum ₹12 lakh)", q1noteBig: "(minimum ₹25 lakh)",
+    q2: "2) Kaam kya karte hain?",
+    q2o: ["Naukri — salary bank mein", "Naukri — cash salary", "Dhandha / business"],
+    q3find: "3) Property ka status?",
+    q3findO: ["Property finalized hai", "Abhi dhoondh rahe hain"],
+    q3own: "3) Kaun si property mortgage karenge?",
+    q3ownO: ["Ghar / Flat", "Dukaan / Office", "Factory / Godown (GIDC)"],
+    q3area: "Kaun sa area? (likhna optional)",
+    q4: "4) Pichhle 12 mahine mein EMI/cheque bounce hua?",
+    q4o: ["Haan", "Nahi", "Koi loan nahi liya"],
+    err: "Kripya sabhi sawaalon ke jawab chuniye.",
+    btn: "WhatsApp par bhejo",
+    afterBtn: "Button dabate hi WhatsApp khulega — message taiyaar milega, sirf Send dabana hai.",
+    calcTitle: "EMI Calculator",
+    calcNote: "Slider ghumao, turant estimate dekho.",
+    calcAmt: "Loan amount", calcRate: "Byaaj dar", calcTen: "Tenure",
+    calcEmiLabel: "Andaazan mahine ki EMI",
+    calcDisc: "Sirf andaaza — exact figure profile check ke baad.",
+    calcYr: "saal",
+    procTitle: "Process kaise chalta hai",
+    p1: "WhatsApp par 4 jawab bhejo — 30 second.",
+    p2: "5 minute mein call (kaam ke time) aur 10-minute profile check — exact rate aur eligibility, koi jhoothe figure nahi.",
+    p3: "Aapke ghar, dukaan ya site par meeting — poore Surat mein. Documents ek hi visit mein.",
+    p4: "Sahi lender program mein file login. Sanction aur disbursal tak regular update.",
+    whyTitle: "Mannu Finance hi kyun?",
+    w1: "₹12 lakh se ₹5 crore — Home Loan, LAP, Micro-LAP, Balance Transfer, Commercial & Industrial",
+    w2: "Cash salary ya kaccha income? Sahi program mein file lagane ka rasta hai",
+    w3: "PMAY-U 2.0 subsidy help — eligible pehli-baar buyers ko ₹1.80 lakh tak ka fayda",
+    w4: "Textile & diamond business: factory, dukaan ya ghar ke against business ke liye loan",
+    w5: "Processing fee aur rate pehle se clear — koi hidden charge nahi, koi guaranteed-approval jhooth nahi",
+    areasTitle: "Hamara service area",
+    areasRes: "Residential", areasInd: "Industrial & commercial belt",
+    cTitle: "Sampark",
+    cArea: "Jahangirpura, Surat - 395005 (poore Surat & South Gujarat mein service)",
+    cHours: "Mon–Sat 9:30am–8pm · Sun 10am–6pm",
+    waIntro: "Namaste! Meri loan enquiry:",
+    waLabels: ["Loan", "Amount", "Kaam", "Property", "EMI/cheque bounce"],
+    waArea: "Area"
+  },
+  gu: {
+    h1: "Surat ma property loan — ghar, business ane industrial. Seedhi vaat.",
+    sub: "Home Loan · Loan Against Property · Commercial dukaan/office · Industrial GIDC shed & godown. Naukri hoy ke dhandho, salary bank ma ke cash ma — sahi program ma loan shakya che.",
+    chipPmay: "PMAY subsidy ₹1.8 lakh sudhi",
+    chip5m: "5 minute ma call",
+    trust: "Koi hidden charge nahi — rate ane processing fee pehli vaat-chit ma j clear.",
+    prodTitle: "Tamne shu joiye che?",
+    prodNote: "Product par tap karo — niche nu form ena pramane set thai jase.",
+    hlName: "Home Loan", hlDesc: "Ghar kharido ke banavo. 9.45% thi*, PMAY subsidy help, cash-salary program pan.",
+    lapName: "Loan Against Property", lapDesc: "Ghar, dukaan ke factory na against business mate paisa. Textile & diamond units welcome.",
+    cpName: "Commercial Property", cpDesc: "Dukaan, office ke showroom kharido — Surat no sauthi zadapi vadhto segment.",
+    ipName: "Industrial Property", ipDesc: "Sachin GIDC, Pandesara, Palsana, Kadodara ma shed, godown ke plot.",
+    applyBtn: "Apply →",
+    formTitle: "4 sawaal → 5 minute ma call",
+    formNote: "Jawab pasand karo ane WhatsApp par moklo. Kaam na time (9:30am–8pm) ma 5 minute ma call aavse.",
+    q0: "Loan type",
+    prodShort: { hl:"Home Loan", lap:"Loan Against Property", cp:"Commercial Property", ip:"Industrial Property" },
+    q1: "1) Loan ketlu joiye che?",
+    q1noteHL: "(minimum ₹12 lakh)", q1noteBig: "(minimum ₹25 lakh)",
+    q2: "2) Kaam shu karo chho?",
+    q2o: ["Naukri — salary bank ma", "Naukri — cash salary", "Dhandho / business"],
+    q3find: "3) Property nu status?",
+    q3findO: ["Property finalized che", "Hamna shodhi rahya chhiye"],
+    q3own: "3) Kai property mortgage karso?",
+    q3ownO: ["Ghar / Flat", "Dukaan / Office", "Factory / Godown (GIDC)"],
+    q3area: "Kaya area ma? (lakhvu optional)",
+    q4: "4) Chhella 12 mahina ma EMI/cheque bounce thayo?",
+    q4o: ["Haan", "Naa", "Koi loan nathi lidhu"],
+    err: "Mehrbani kari ne badha sawaal na jawab pasand karo.",
+    btn: "WhatsApp par moklo",
+    afterBtn: "Button dabavta j WhatsApp khulse — message taiyaar hase, khali Send dabavvanu.",
+    calcTitle: "EMI Calculator",
+    calcNote: "Slider farvo, turant estimate juo.",
+    calcAmt: "Loan amount", calcRate: "Vyaaj dar", calcTen: "Tenure",
+    calcEmiLabel: "Andaajit mahine ni EMI",
+    calcDisc: "Khali andaajo — exact figure profile check pachhi.",
+    calcYr: "varas",
+    procTitle: "Process kevi rite chale che",
+    p1: "WhatsApp par 4 jawab moklo — 30 second.",
+    p2: "5 minute ma call (kaam na time) ane 10-minute profile check — exact rate ane eligibility, koi khota figure nahi.",
+    p3: "Tamara ghar, dukaan ke site par meeting — aakha Surat ma. Documents ek j visit ma.",
+    p4: "Sahi lender program ma file login. Sanction ane disbursal sudhi regular update.",
+    whyTitle: "Mannu Finance j kem?",
+    w1: "₹12 lakh thi ₹5 crore — Home Loan, LAP, Micro-LAP, Balance Transfer, Commercial & Industrial",
+    w2: "Cash salary ke kaccha income? Sahi program ma file lagavva no rasto che",
+    w3: "PMAY-U 2.0 subsidy help — eligible pehli-vaar buyers ne ₹1.80 lakh sudhi no fayado",
+    w4: "Textile & diamond business: factory, dukaan ke ghar na against business mate loan",
+    w5: "Processing fee ane rate pehla thi j clear — koi hidden charge nahi, koi guaranteed-approval jooth nahi",
+    areasTitle: "Amaro service area",
+    areasRes: "Residential", areasInd: "Industrial & commercial belt",
+    cTitle: "Sampark",
+    cArea: "Jahangirpura, Surat - 395005 (aakha Surat & South Gujarat ma service)",
+    cHours: "Mon–Sat 9:30am–8pm · Sun 10am–6pm",
+    waIntro: "Namaste! Mari loan enquiry:",
+    waLabels: ["Loan", "Amount", "Kaam", "Property", "EMI/cheque bounce"],
+    waArea: "Area"
+  }
+};
+
+const WA_NUMBER = "919974153499";
+let lang = "en";
+let prod = "hl";
+
+const params = new URLSearchParams(location.search);
+if (["hl","lap","cp","ip"].includes(params.get("p"))) prod = params.get("p");
+if (["en","hi","gu"].includes(params.get("lang"))) lang = params.get("lang");
+
+function radioHTML(name, options, sel){
+  return options.map((o,i) =>
+    `<label><input type="radio" name="${name}" value="${i}"${sel===String(i)?" checked":""}>${o}</label>`
+  ).join("");
+}
+function curVal(name){
+  const c = document.querySelector(`input[name="${name}"]:checked`);
+  return c ? c.value : null;
+}
+function apply(){
+  const t = I18N[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t[el.dataset.i18n]; });
+
+  // product radios (q0)
+  document.getElementById("q0").innerHTML =
+    ["hl","lap","cp","ip"].map(k =>
+      `<label><input type="radio" name="prod" value="${k}"${prod===k?" checked":""}>${t.prodShort[k]}</label>`
+    ).join("");
+  document.querySelectorAll('input[name="prod"]').forEach(r =>
+    r.addEventListener("change", () => { prod = r.value; apply(); })
+  );
+
+  // amount label + options depend on product
+  const minNote = (prod==="hl"||prod==="lap") ? t.q1noteHL : t.q1noteBig;
+  document.getElementById("q1label").textContent = t.q1 + " " + minNote;
+  document.getElementById("q1").innerHTML = radioHTML("loan", AMOUNTS[prod], curVal("loan"));
+
+  document.getElementById("q2").innerHTML = radioHTML("work", t.q2o, curVal("work"));
+
+  // q3 depends on product (find vs own)
+  const own = (prod==="lap");
+  document.getElementById("q3label").textContent = own ? t.q3own : t.q3find;
+  document.getElementById("q3").innerHTML = radioHTML("prop", own ? t.q3ownO : t.q3findO, curVal("prop"));
+  document.getElementById("area").placeholder = t.q3area;
+
+  document.getElementById("q4").innerHTML = radioHTML("bounce", t.q4o, curVal("bounce"));
+
+  document.querySelectorAll(".langs button").forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+  calc();
+}
+
+document.querySelectorAll(".langs button").forEach(b =>
+  b.addEventListener("click", () => { lang = b.dataset.lang; apply(); })
+);
+document.querySelectorAll(".prod").forEach(c =>
+  c.addEventListener("click", () => {
+    prod = c.dataset.prod; apply();
+    document.getElementById("formCard").scrollIntoView({behavior:"smooth"});
+  })
+);
+
+document.getElementById("gate").addEventListener("submit", e => {
+  e.preventDefault();
+  const t = I18N[lang];
+  const names = ["loan","work","prop","bounce"];
+  const vals = names.map(n => document.querySelector(`input[name="${n}"]:checked`));
+  const err = document.getElementById("err");
+  if (vals.some(v => !v)) { err.style.display = "block"; return; }
+  err.style.display = "none";
+  const own = (prod==="lap");
+  const opts = [AMOUNTS[prod], t.q2o, own ? t.q3ownO : t.q3findO, t.q4o];
+  const area = document.getElementById("area").value.trim();
+  let lines = [`1) ${t.waLabels[0]}: ${t.prodShort[prod]}`];
+  vals.forEach((v,i) => lines.push(`${i+2}) ${t.waLabels[i+1]}: ${opts[i][v.value]}`));
+  if (area) lines[3] += ` (${t.waArea}: ${area})`;
+  const msg = `${t.waIntro}\n${lines.join("\n")}\n(mannufinance.com)`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+});
+
+// EMI calculator
+function fmtL(l){ return l >= 100 ? (l/100).toFixed(2).replace(/\.?0+$/,"") + " Cr" : l + " lakh"; }
+function calc(){
+  const t = I18N[lang];
+  const L = +document.getElementById("cAmt").value;
+  const r = +document.getElementById("cRate").value;
+  const y = +document.getElementById("cTen").value;
+  document.getElementById("amtVal").textContent = "₹" + fmtL(L);
+  document.getElementById("rateVal").textContent = r + "%";
+  document.getElementById("tenVal").textContent = y + " " + t.calcYr;
+  const P = L * 100000, i = r/1200, n = y*12;
+  const emi = P * i * Math.pow(1+i,n) / (Math.pow(1+i,n) - 1);
+  document.getElementById("emiOut").textContent = "₹" + Math.round(emi).toLocaleString("en-IN");
+}
+["cAmt","cRate","cTen"].forEach(id => document.getElementById(id).addEventListener("input", calc));
+
+apply();
+</script>
+</body>
+</html>
